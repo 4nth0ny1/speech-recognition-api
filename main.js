@@ -16,13 +16,8 @@ recognition.addEventListener('result', (e)=>{
 
   p.innerText = text;
 
-  if(!e.results[0].isFinal){
-    if (text.includes('break')) {
-      p = document.createElement('p')
-      p.innerHTML = '<br></br>'
-      texts.appendChild(p)
-    }
-  } else {
+
+  if(e.results[0].isFinal){
     if (text.includes('how are you')) {
       p = document.createElement('p');
       p.classList.add('replay');
@@ -32,7 +27,7 @@ recognition.addEventListener('result', (e)=>{
     if (text.includes("what's your name") || text.includes('what is your name')) {
       p = document.createElement('p');
       p.classList.add('replay');
-      p.innerText = 'My Name is Cifar';
+      p.innerText = 'My Name is Anthony';
       texts.appendChild(p)
     }
     if (text.includes('open YouTube')) {
